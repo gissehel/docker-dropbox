@@ -7,7 +7,7 @@ RUN echo 'deb http://linux.dropbox.com/debian jessie main' > /etc/apt/sources.li
 	&& apt-key adv --keyserver pool.sks-keyservers.net --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E \
 	&& apt-get -qqy update \
 	# Note 'ca-certificates' dependency is required for 'dropbox start -i' to succeed
-	&& apt-get -qqy install ca-certificates curl python-gpgme libatomic1 dropbox \
+	&& apt-get -qqy install ca-certificates curl python-gpgme libatomic1 libc6 libglapi-mesa libxdamage1 libxfixes3 libxcb-glx0 libxcb-dri2-0 libxcb-dri3-0 libxcb-present0 libxcb-sync1 libxshmfence1 libxxf86vm1 dropbox \
 	# Perform image clean up.
 	&& apt-get -qqy autoclean \
 	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
